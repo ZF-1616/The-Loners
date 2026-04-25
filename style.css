@@ -1,0 +1,88 @@
+/* === GLOBAL === */
+body {
+background-color: #0a0a0a;
+color: #00ff9f;
+font-family: "Courier New", monospace;
+margin: 0;
+padding: 0;
+}
+
+/* === SCROLLBAR === */
+::-webkit-scrollbar {
+width: 8px;
+}
+::-webkit-scrollbar-thumb {
+background: #00ff9f;
+}
+::-webkit-scrollbar-track {
+background: #111;
+}
+
+/* === LINKS === */
+a {
+color: #00ff9f;
+text-decoration: none;
+transition: 0.2s;
+}
+a:hover {
+color: #00ffaa;
+text-shadow: 0 0 5px #00ff9f;
+}
+
+/* === HEADINGS === */
+h1, h2, h3 {
+color: #00ff9f;
+text-shadow: 0 0 10px #00ff9f;
+}
+
+/* === CONTAINERS / CARDS === */
+.container, .card, .box {
+background: rgba(0, 0, 0, 0.7);
+border: 1px solid #00ff9f;
+box-shadow: 0 0 10px #00ff9f33;
+padding: 15px;
+margin: 10px;
+}
+
+/* === INPUTS === */
+input, textarea {
+background: black;
+border: 1px solid #00ff9f;
+color: #00ff9f;
+padding: 8px;
+}
+
+/* === BUTTONS === */
+button {
+background: black;
+border: 1px solid #00ff9f;
+color: #00ff9f;
+padding: 8px 12px;
+cursor: pointer;
+transition: 0.2s;
+}
+button:hover {
+background: #00ff9f;
+color: black;
+box-shadow: 0 0 10px #00ff9f;
+}
+
+/* === TERMINAL EFFECT === */
+.terminal {
+font-family: monospace;
+background: black;
+padding: 10px;
+border: 1px solid #00ff9f;
+box-shadow: inset 0 0 10px #00ff9f55;
+}
+
+/* === GLOW ANIMATION === */
+@keyframes glow {
+0% { text-shadow: 0 0 5px #00ff9f; }
+50% { text-shadow: 0 0 20px #00ff9f; }
+100% { text-shadow: 0 0 5px #00ff9f; }
+}
+
+.glow {
+animation: glow 2s infinite;
+}

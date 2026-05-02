@@ -91,3 +91,10 @@ a {
   text-decoration: none;
 }
 
+.m-button {
+  border-radius: 5px;
+  width: 20%;
+  cursor: pointer;
+  min-width: 170px;
+  font-size: 25px;
+}

@@ -97,9 +97,6 @@ a {
   cursor: pointer;
   min-width: 160px;
   font-size: 20px;
+  margin-left: 5px;
 }
 
-.midle_container {
-  display: flex;
-  justify-content: center;
-}

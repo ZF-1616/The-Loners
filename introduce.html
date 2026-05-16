@@ -1,178 +1,238 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>About Us</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
 
-  <style>
-    body {
-      margin: 0;
-      background: #111;
-      overflow: hidden;
-      font-family: Arial, sans-serif;
-      color: white;
+<title>About Us</title>
+
+<style>
+
+body{
+    margin:0;
+    background:#0d0d0d;
+    overflow:hidden;
+    font-family:Arial;
+    color:white;
+}
+
+/* ROTATING AREA */
+
+.scene{
+    width:100vw;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    perspective:1200px;
+}
+
+.carousel{
+    position:relative;
+    width:300px;
+    height:300px;
+    transform-style:preserve-3d;
+    animation:spin 15s linear infinite;
+}
+
+@keyframes spin{
+    from{
+        transform:rotateY(0deg);
     }
-
-    .scene {
-      width: 100vw;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      perspective: 1200px;
+    to{
+        transform:rotateY(360deg);
     }
+}
 
-    .carousel {
-      position: relative;
-      width: 300px;
-      height: 300px;
-      transform-style: preserve-3d;
-      animation: rotate 15s linear infinite;
-    }
+/* MEMBER CARDS */
 
-    .carousel:hover {
-      animation-play-state: paused;
-    }
+.card{
+    position:absolute;
+    width:220px;
+    height:260px;
+    background:#1e1e1e;
+    border-radius:20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    cursor:pointer;
+    transition:0.3s;
+    box-shadow:0 0 25px rgba(255,255,255,0.1);
+}
 
-    .card {
-      position: absolute;
-      width: 180px;
-      height: 220px;
-      background: #1f1f1f;
-      border-radius: 20px;
-      text-align: center;
-      padding: 20px;
-      box-shadow: 0 0 20px rgba(255,255,255,0.15);
-      transition: 0.3s;
-      cursor: pointer;
-    }
+.card:hover{
+    transform:scale(1.08);
+}
 
-    .card:hover {
-      transform: scale(1.1);
-      background: #2c2c2c;
-    }
+.card h1{
+    font-size:30px;
+}
 
-    .card h1 {
-      font-size: 22px;
-      margin-top: 40px;
-    }
+/* CARD POSITIONS */
 
-    .description {
-      margin-top: 20px;
-      font-size: 14px;
-      color: #bbb;
-    }
+.card:nth-child(1){
+    transform:rotateY(0deg) translateZ(400px);
+}
 
-    .card:nth-child(1) {
-      transform: rotateY(0deg) translateZ(350px);
-    }
+.card:nth-child(2){
+    transform:rotateY(90deg) translateZ(400px);
+}
 
-    .card:nth-child(2) {
-      transform: rotateY(90deg) translateZ(350px);
-    }
+.card:nth-child(3){
+    transform:rotateY(180deg) translateZ(400px);
+}
 
-    .card:nth-child(3) {
-      transform: rotateY(180deg) translateZ(350px);
-    }
+.card:nth-child(4){
+    transform:rotateY(270deg) translateZ(400px);
+}
 
-    .card:nth-child(4) {
-      transform: rotateY(270deg) translateZ(350px);
-    }
+/* SIDEBAR */
 
-    @keyframes rotate {
-      from {
-        transform: rotateY(0deg);
-      }
-      to {
-        transform: rotateY(360deg);
-      }
-    }
+.sidebar{
+    position:fixed;
+    right:-400px;
+    top:0;
+    width:350px;
+    height:100%;
+    background:#181818;
+    transition:0.4s;
+    padding:30px;
+    box-sizing:border-box;
+    box-shadow:-5px 0 20px rgba(0,0,0,0.5);
+}
 
-    .sidebar {
-      position: fixed;
-      right: -320px;
-      top: 0;
-      width: 300px;
-      height: 100%;
-      background: #1b1b1b;
-      padding: 30px;
-      transition: 0.4s;
-      box-shadow: -5px 0 20px rgba(0,0,0,0.5);
-    }
+.sidebar.active{
+    right:0;
+}
 
-    .card:hover ~ .sidebar {
-      right: 0;
-    }
+.sidebar img{
+    width:100%;
+    border-radius:20px;
+    margin-bottom:20px;
+}
 
-    .home-btn {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      padding: 12px 24px;
-      border: none;
-      border-radius: 10px;
-      background: white;
-      cursor: pointer;
-      font-size: 16px;
-    }
+.sidebar h2{
+    font-size:35px;
+}
 
-  </style>
+.sidebar p{
+    color:#cfcfcf;
+    line-height:1.6;
+}
+
+/* HOME BUTTON */
+
+.home-btn{
+    position:fixed;
+    left:20px;
+    bottom:20px;
+    padding:12px 24px;
+    border:none;
+    border-radius:12px;
+    font-size:20px;
+    cursor:pointer;
+}
+
+</style>
 </head>
 
 <body>
 
 <div class="scene">
 
-  <div class="carousel">
+    <div class="carousel" id="carousel">
 
-    <div class="card">
-      <h1>JUSTTESTING</h1>
-      <div class="description">
-        Owner and developer of this website
-      </div>
+        <div class="card"
+        onclick="showInfo(
+        'JUSTTESTING',
+        'sources/images/justtesting.png',
+        'Owner and developer of The Loners website.'
+        )">
+            <h1>JUSTTESTING</h1>
+        </div>
+
+        <div class="card"
+        onclick="showInfo(
+        'BROISSUS',
+        'sources/images/placeholder.png',
+        'Co-owner and helper of the project.'
+        )">
+            <h1>BROISSUS</h1>
+        </div>
+
+        <div class="card"
+        onclick="showInfo(
+        'ETHAN',
+        'sources/images/placeholder.png',
+        'Idea generator and creative helper.'
+        )">
+            <h1>ETHAN</h1>
+        </div>
+
+        <div class="card"
+        onclick="showInfo(
+        'Niranthakk',
+        'sources/images/placeholder.png',
+        'Helper, Developer, Once in a Week updater.'
+        )">
+            <h1>Niranthakk</h1>
+        </div>
+
     </div>
-
-    <div class="card">
-      <h1>BROISSUS</h1>
-      <div class="description">
-        Co-owner of this website
-      </div>
-    </div>
-
-    <div class="card">
-      <h1>ETHAN</h1>
-      <div class="description">
-        Gives many ideas
-      </div>
-    </div>
-
-    <div class="card">
-      <h1>Niranthakk</h1>
-      <div class="description">
-        Helper and developer
-      </div>
-    </div>
-
-    <div class="sidebar">
-      <h1>Member Info</h1>
-      <p>
-        Hover any member card to pause the rotation 
-      </p>
-    </div>
-
-  </div>
 
 </div>
 
-<button class="home-btn" onclick="goToPage()">
-  Home
+<!-- SIDEBAR -->
+
+<div class="sidebar" id="sidebar">
+
+    <img id="memberImg" src="">
+
+    <h2 id="memberName"></h2>
+
+    <p id="memberInfo"></p>
+
+</div>
+
+<button class="home-btn" onclick="goHome()">
+    Home
 </button>
 
 <script>
-  function goToPage() {
-    window.location.href = "/The-Loners";
-  }
+
+const carousel = document.getElementById("carousel");
+const sidebar = document.getElementById("sidebar");
+
+function showInfo(name,img,info){
+
+    carousel.style.animationPlayState = "paused";
+
+    document.getElementById("memberName").innerText = name;
+    document.getElementById("memberImg").src = img;
+    document.getElementById("memberInfo").innerText = info;
+
+    sidebar.classList.add("active");
+}
+
+function goHome(){
+    window.location.href="/The-Loners";
+}
+
+/* CLICK EMPTY AREA = CLOSE */
+
+document.body.addEventListener("click", function(e){
+
+    if(
+        !e.target.closest(".card") &&
+        !e.target.closest(".sidebar")
+    ){
+        sidebar.classList.remove("active");
+        carousel.style.animationPlayState = "running";
+    }
+
+});
+
 </script>
 
 </body>

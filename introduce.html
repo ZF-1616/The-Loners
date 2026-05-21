@@ -133,13 +133,27 @@ body{
     border-radius:12px;
     font-size:20px;
     cursor:pointer;
+    background: black;
+    border: 1px solid #2461AD;
+    color: #2461AD;
+    transition: 0.2s;
 }
+    
+.home-btn:hover {
+    background: #2461AD;
+    color: black;
+    box-shadow: 0 0 10px #2461AD;
+}    
 
 </style>
 </head>
 
 <body>
-
+    
+<button class="home-btn" onclick="goHome()">
+    Home
+</button>
+    
 <div class="scene">
 
     <div class="carousel" id="carousel">
@@ -195,10 +209,6 @@ body{
     <p id="memberInfo"></p>
 
 </div>
-
-<button class="home-btn" onclick="goHome()">
-    Home
-</button>
 
 <script>
 

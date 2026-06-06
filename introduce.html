@@ -1,247 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
-
-<title>About Us</title>
-
-<style>
-
-body{
-    margin:0;
-    background:#0d0d0d;
-    overflow:hidden;
-    font-family:Arial;
-    color:white;
-    background-image:  url('sources/images/background-1.jpg');
-}
-
-/* ROTATING AREA */
-
-.scene{
-    width:100vw;
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    perspective:1200px;
-}
-
-.carousel{
-    position:relative;
-    width:300px;
-    height:300px;
-    transform-style:preserve-3d;
-    animation:spin 15s linear infinite;
-}
-
-@keyframes spin{
-    from{
-        transform:rotateY(0deg);
-    }
-    to{
-        transform:rotateY(360deg);
-    }
-}
-
-/* MEMBER CARDS */
-
-.card{
-    position:absolute;
-    width:220px;
-    height:260px;
-    background:#1e1e1e;
-    border-radius:20px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
-    cursor:pointer;
-    transition:0.3s;
-    box-shadow:0 0 25px rgba(255,255,255,0.1);
-}
-
-.card:hover{
-    transform:scale(1.08);
-}
-
-.card h1{
-    font-size:30px;
-}
-
-/* CARD POSITIONS */
-
-.card:nth-child(1){
-    transform:rotateY(0deg) translateZ(400px);
-}
-
-.card:nth-child(2){
-    transform:rotateY(90deg) translateZ(400px);
-}
-
-.card:nth-child(3){
-    transform:rotateY(180deg) translateZ(400px);
-}
-
-.card:nth-child(4){
-    transform:rotateY(270deg) translateZ(400px);
-}
-
-/* SIDEBAR */
-
-.sidebar{
-    position:fixed;
-    right:-400px;
-    top:0;
-    width:350px;
-    height:100%;
-    background:#181818;
-    transition:0.4s;
-    padding:30px;
-    box-sizing:border-box;
-    box-shadow:-5px 0 20px rgba(0,0,0,0.5);
-}
-
-.sidebar.active{
-    right:0;
-}
-
-.sidebar img{
-    width:100%;
-    border-radius:20px;
-    margin-bottom:20px;
-}
-
-.sidebar h2{
-    font-size:35px;
-}
-
-.sidebar p{
-    color:#cfcfcf;
-    line-height:1.6;
-}
-
-/* HOME BUTTON */
-
-.home-btn{
-    position:fixed;
-    left:20px;
-    bottom:20px;
-    padding:12px 24px;
-    border-radius:12px;
-    font-size:20px;
-    cursor:pointer;
-    background: black;
-    border: 1px solid #2461AD;
-    color: #2461AD;
-    transition: 0.2s;
-}
-    
-.home-btn:hover {
-    background: #2461AD;
-    color: black;
-    box-shadow: 0 0 10px #2461AD;
-}    
-
-</style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Meet The Loners team.">
+    <title>Team | The Loners</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    
-<div class="scene">
-    <button class="home-btn" onclick="goHome()">
-        Home
-    </button>
-    <div class="carousel" id="carousel">
+    <header class="site-header">
+        <a class="brand" href="index.html"><span class="brand-mark">TL</span><span>The Loners</span></a>
+        <nav class="nav-links" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="projects.html">Projects</a>
+            <a class="active" href="introduce.html">Team</a>
+            <a href="https://discord.gg/5587x2Tt52" target="_blank" rel="noopener">Discord</a>
+        </nav>
+    </header>
 
-        <div class="card"
-        onclick="showInfo(
-        'JUSTTESTING',
-        'sources/images/justtesting.png',
-        'Owner and developer of The Loners website.'
-        )">
-            <h1>JUSTTESTING</h1>
-        </div>
+    <main>
+        <section class="page-hero">
+            <p class="eyebrow">The people behind the pixels</p>
+            <h1>Meet the crew.</h1>
+            <p>Different talents, one team. These are the people building The Loners.</p>
+        </section>
 
-        <div class="card"
-        onclick="showInfo(
-        'BROISSUS',
-        'sources/images/broissus.jpeg',
-        'Co-owner and helper of the project.'
-        )">
-            <h1>BROISSUS</h1>
-        </div>
+        <section class="content">
+            <div class="section-heading">
+                <h2>Player select</h2>
+                <p>Every great project starts with a party.</p>
+            </div>
 
-        <div class="card"
-        onclick="showInfo(
-        'ETHAN',
-        'sources/images/ethan.jpeg',
-        'Idea generator, Artist and creative helper.'
-        )">
-            <h1>ETHAN</h1>
-        </div>
+            <div class="grid">
+                <article class="card">
+                    <img class="card-image" src="sources/images/justtesting.png" alt="JUSTTESTING">
+                    <div class="card-body"><span class="tag">Owner / Developer</span><h3>JUSTTESTING</h3><p>Owner and developer of The Loners website.</p></div>
+                </article>
+                <article class="card">
+                    <img class="card-image" src="sources/images/broissus.jpeg" alt="BROISSUS">
+                    <div class="card-body"><span class="tag">Co-owner</span><h3>BROISSUS</h3><p>Co-owner and all-around project helper.</p></div>
+                </article>
+                <article class="card">
+                    <img class="card-image" src="sources/images/ethan.jpeg" alt="ETHAN">
+                    <div class="card-body"><span class="tag">Creative</span><h3>ETHAN</h3><p>Idea generator, artist, and creative helper.</p></div>
+                </article>
+                <article class="card">
+                    <img class="card-image" src="sources/images/Niranthakk.png" alt="Niranthakk">
+                    <div class="card-body"><span class="tag">Developer</span><h3>Niranthakk</h3><p>Helper, developer, and once-a-week updater.</p></div>
+                </article>
+            </div>
+        </section>
+    </main>
 
-        <div class="card"
-        onclick="showInfo(
-        'Niranthakk',
-        'sources/images/placeholder.png',
-        'Helper, Developer, Once in a Week updater.'
-        )">
-            <h1>Niranthakk</h1>
-        </div>
-
-    </div>
-
-</div>
-
-<!-- SIDEBAR -->
-
-<div class="sidebar" id="sidebar">
-
-    <img id="memberImg" src="">
-
-    <h2 id="memberName"></h2>
-
-    <p id="memberInfo"></p>
-
-</div>
-
-<script>
-
-const carousel = document.getElementById("carousel");
-const sidebar = document.getElementById("sidebar");
-
-function showInfo(name,img,info){
-
-    carousel.style.animationPlayState = "paused";
-
-    document.getElementById("memberName").innerText = name;
-    document.getElementById("memberImg").src = img;
-    document.getElementById("memberInfo").innerText = info;
-
-    sidebar.classList.add("active");
-}
-
-function goHome(){
-    window.location.href="/The-Loners";
-}
-
-/* CLICK EMPTY AREA = CLOSE */
-
-document.body.addEventListener("click", function(e){
-
-    if(
-        !e.target.closest(".card") &&
-        !e.target.closest(".sidebar")
-    ){
-        sidebar.classList.remove("active");
-        carousel.style.animationPlayState = "running";
-    }
-
-});
-
-</script>
-
+    <footer class="site-footer"><strong>The Loners</strong><span>Together, we build.</span></footer>
 </body>
 </html>

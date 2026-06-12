@@ -19,7 +19,7 @@ The website is ready for deployment as a static site. All pages are linked with 
 ## Changelog
 ### 2026-06-11
 - Updated `projects.html`.
-- introduce new mini project.
+- revealed new mini project.
 
 ### 2026-06-06
 - Updated `index.html` to use relative paths for internal navigation.

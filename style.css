@@ -380,24 +380,26 @@ p {
     line-height: 1.7;
 }
 
+.project-art-bloopit,
 .project-art {
     display: grid;
     min-height: 380px;
     place-items: center;
-    background:
-        linear-gradient(rgba(0, 31, 84, 0.16), rgba(0, 31, 84, 0.16)),
-        url("sources/images/background-1.jpg") center/cover;
 }
 
 .project-art-bloopit {
-    display: grid;
-    min-height: 380px;
-    place-items: center;
     background:
         linear-gradient(rgba(0, 31, 84, 0.16), rgba(0, 31, 84, 0.16)),
         url("sources/images/bloopit3.0.png") center/cover;
 }
 
+.project-art {
+    background:
+        linear-gradient(rgba(0, 31, 84, 0.16), rgba(0, 31, 84, 0.16)),
+        url("sources/images/background-1.jpg") center/cover;
+}
+
+.project-art-bloopit span,
 .project-art span {
     padding: 18px 22px;
     border: 2px solid rgba(255, 255, 255, 0.5);

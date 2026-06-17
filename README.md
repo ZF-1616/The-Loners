@@ -17,6 +17,9 @@ Okay yall? welc -Niranthak
 The website is ready for deployment as a static site. All pages are linked with relative paths, and local image assets are preserved in `sources/images`.
 
 ## Changelog
+### 2026-06-17
+- Updated `gallery.html` to store our project's image.
+
 ### 2026-06-11
 - Updated `projects.html`.
 - revealed new mini project.

@@ -323,6 +323,10 @@ p {
     padding: 24px;
 }
 
+.card-body2 {
+    padding: 14px;
+}
+
 .card h2,
 .card h3 {
     margin-bottom: 10px;

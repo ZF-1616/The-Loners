@@ -9,11 +9,11 @@
 </head>
 <body>
     <header class="site-header">
-        <a class="brand" href="/The-Loners/index.html"><span class="brand-mark">TL</span><span>The Loners</span></a>
+        <a class="brand" href="../index.html"><span class="brand-mark">TL</span><span>The Loners</span></a>
         <nav class="nav-links" aria-label="Main navigation">
-            <a href="/The-Loners/index.html">Home</a>
-            <a href="/The-Loners/projects.html">Projects</a>
-            <a href="/The-Loners/introduce.html">Team</a>
+            <a href="../index.html">Home</a>
+            <a href="../projects.html">Projects</a>
+            <a href="../introduce.html">Team</a>
             <a href="https://discord.gg/5587x2Tt52" target="_blank" rel="noopener">Discord</a>
         </nav>
     </header>
@@ -29,15 +29,60 @@
             <div class="section-heading">
                 <h2>Our project's history image</h2>
                 <p>From the version 1.0 to now </p>
+                <div class="gallery-photos">
+                    <img src="VWMEL-1.png" alt="screene-1 mobile" class="gallery-thumb" data-full="VWMEL-1.png">
+                    <img src="VWMEL-2.png" alt="screene-2 pc/desktop" class="gallery-thumb" data-full="VWMEL-2.png">
+                </div>
+            </div>
+
+            <div id="image-lightbox" class="lightbox" aria-hidden="true">
+                <button class="lightbox-close" type="button" aria-label="Close preview">×</button>
+                <img id="lightbox-image" src="" alt="Full preview">
+            </div>
             </div>
 
             <div class="grid">
-                <img src="VWMEL-1.png" alt="screene-1 mobile">
-                <img src="VWMEL-2.png" alt="screene-2 pc/desktop">
+
             </div>
         </section>
     </main>
 
     <footer class="site-footer"><strong>The Loners</strong><span>Together, we build.</span></footer>
+
+    <script>
+        const thumbs = document.querySelectorAll('.gallery-thumb');
+        const lightbox = document.getElementById('image-lightbox');
+        const lightboxImage = document.getElementById('lightbox-image');
+        const closeButton = document.querySelector('.lightbox-close');
+
+        thumbs.forEach((thumb) => {
+            thumb.addEventListener('click', () => {
+                lightboxImage.src = thumb.dataset.full;
+                lightboxImage.alt = thumb.alt;
+                lightbox.classList.add('is-open');
+                lightbox.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        const closeLightbox = () => {
+            lightbox.classList.remove('is-open');
+            lightbox.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        };
+
+        closeButton.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', (event) => {
+            if (event.target === lightbox) {
+                closeLightbox();
+            }
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && lightbox.classList.contains('is-open')) {
+                closeLightbox();
+            }
+        });
+    </script>
 </body>
 </html>

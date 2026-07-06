@@ -342,6 +342,7 @@ p {
 
 .gallery-card {
     overflow: hidden;
+    width: 70%;
 }
 
 .gallery-card .card-body2 {
@@ -350,7 +351,7 @@ p {
 
 .gallery-card h2 {
     margin-bottom: 0;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
 }
 
 .gallery-image {
